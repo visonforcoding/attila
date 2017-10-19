@@ -117,7 +117,8 @@
             {% else %}
               {% set right='Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a>' %}
             {% endif %}
-
+         
+  
           <span class="credits-theme">{{left}}</span>
           <span class="credits-software">{{right}}</span>
           {% endif %}
@@ -140,6 +141,5 @@
     {% endfor %}
   {% endif %}
   {% include 'partials/analytics.js' %}
-  {% include 'partials/disqus.js' %}
 </body>
 </html>
