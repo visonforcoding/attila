@@ -28,14 +28,14 @@
     {{ super() }}
 
     <link href="{{ SITEURL }}/{{ article.url }}" rel="canonical" />
-    {% for keyword in article.keywords %}
-        <meta name="keywords" content="{{keyword}}" >
-    {% endfor %}
+    {% if article.keywords %}
+        <meta name="keywords" content="{{ article.keywords }}" >
+    {% endif %}
 
     {% if description %}
         <meta name="description" content="{{ description }}">
-    {% elif article.headline %}
-        <meta name="description" content="{{ article.headline }}">
+    {% elif article.title %}
+        <meta name="description" content="{{ article.title }}">
     {% elif article.summary %}
         <meta name="description" content="{{ article.summary|striptags|truncate(140) }}">
     {% endif %}

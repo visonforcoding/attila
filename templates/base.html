@@ -89,7 +89,6 @@
           %} {% set right='Published with
           <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a>' %} {% endif %}
 
-
           <span class="credits-theme">{{left}}</span>
           <span class="credits-software">{{right}}</span>
           {% endif %}
@@ -102,7 +101,8 @@
   <!-- Script specified by the user -->
   {% for js in JS_OVERRIDE %} {% if js|lower|truncate(4, True, '') == "http" %} {% set js = js %} {% else %} {% set js = SITEURL+"/"+js
   %} {% endif %}
-  <script type="text/javascript" src="{{ js }}"></script> {% endfor %} {% endif %} {% include 'partials/analytics.html' %}
+  <script type="text/javascript" src="{{ js }}"></script> {% endfor %} {% endif %} 
+  {% include 'partials/analytics.html' %}
 </body>
 
 </html>
